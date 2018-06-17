@@ -9,11 +9,11 @@ def split_train_test(X, y):
     :return:
     """
     print("> Splitting train test set...")
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y,
-        test_size=0.2,
-        random_state=0)
+
+    X_train, X_eval, y_train, y_eval = train_test_split(
+        X, y, test_size=0.2)
+
     print("Train set: %s" % str(X_train.shape))
-    print("Test set: %s" % str(X_test.shape))
+    print("Test set: %s" % str(X_eval.shape))
     print("----------------")
-    return X_train, X_test, y_train, y_test
+    return X_train, X_eval, y_train, y_eval

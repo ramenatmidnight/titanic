@@ -11,11 +11,13 @@ def extract_features(df):
         "Pclass",
         "Sex",
         "Age",
-        # "Fare"
+        "Fare"
     ]].values
 
     # the "target"
-    y = df["Survived"].values
+    y = []
+    if "Survived" in df.columns:
+        y = df["Survived"].values
 
     print("Shape: %s" % str(X.shape))
     print("----------------")

@@ -1,3 +1,4 @@
+from models.build_submission import build_submission
 from models.evaluate import evaluate_model
 from models.train import train_model
 from preprocess.explore_data import explore_data
@@ -12,20 +13,24 @@ from utils.setup import setup_paths
 def main():
     paths = setup_paths()
     raw_data_path = paths.get("raw_data_path") + "train.csv"
+    baseline_submission_path = paths.get("raw_data_path") + "gender_submission.csv "
+    test_data_path = paths.get("raw_data_path") + "test.csv"
 
     df = load_data(raw_data_path)
 
-    # explore_data(df)
-    # # Age, Sex, Pclass seems to contribute to Survived
+    explore_data(df)
+    # Age, Sex, Pclass seems to contribute to Survived
 
     df = transform_data(df)
     df = clean_data(df)
 
     X, y = extract_features(df)
-    X_train, X_test, y_train, y_test = split_train_test(X, y)
+    X_train, X_eval, y_train, y_eval = split_train_test(X, y)
 
     model = train_model(X_train, y_train)
-    evaluate_model(model, X_test, y_test)
+    evaluate_model(model, X_eval, y_eval)
+
+    build_submission(model, test_data_path, baseline_submission_path)
 
 
 if __name__ == '__main__':

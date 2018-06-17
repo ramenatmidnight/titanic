@@ -1,0 +1,11 @@
+cache/
+datasets/
+
+.idea/
+
+__pycache__/
+*.py[cod]
+
+*.swp
+*.swo
+

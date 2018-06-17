@@ -8,5 +8,6 @@ def load_data(path):
     df = pd.read_csv(path)
     print("Shape: %s" % str(df.shape))
     print("Columns: %s" % str(df.columns.values))
+    print(df.head(2))
     print("----------------")
     return df

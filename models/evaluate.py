@@ -20,5 +20,6 @@ def evaluate_model(model, X_eval, y_eval):
 
     print("Baseline Accuracy: %s" % baseline_score)
     print("Accuracy: %s" % score)
+    print("IMPROVEMENT: %s" % str(score - baseline_score))
     print("----------------")
 

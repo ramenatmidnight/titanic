@@ -4,9 +4,19 @@ def extract_features(df):
     :param df:
     :return:
     """
-    return df[[
+    print("> Extracting features...")
+
+    # features that will be used
+    X = df[[
         "Pclass",
         "Sex",
         "Age",
         # "Fare"
-    ]].values, df["Survived"].values
+    ]].values
+
+    # the "target"
+    y = df["Survived"].values
+
+    print("Shape: %s" % str(X.shape))
+    print("----------------")
+    return X, y

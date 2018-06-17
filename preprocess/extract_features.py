@@ -8,8 +8,8 @@ def extract_features(df):
 
     # features that will be used
     X = df[[
-        "Pclass",
         "Sex",
+        "Pclass",
         "Age",
         "Fare"
     ]].values

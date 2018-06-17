@@ -18,7 +18,7 @@ def main():
 
     df = load_data(raw_data_path)
 
-    explore_data(df)
+    # explore_data(df)
     # Age, Sex, Pclass seems to contribute to Survived
 
     # TODO: cache at every step
@@ -32,7 +32,7 @@ def main():
     model = train_model(X_train, y_train)
     evaluate_model(model, X_eval, y_eval)
 
-    build_submission(model, test_data_path, baseline_submission_path)
+    # build_submission(model, test_data_path, baseline_submission_path)
 
 
 if __name__ == '__main__':

@@ -7,6 +7,7 @@ from utils.setup import setup_paths
 
 def explore_data(df):
     paths = setup_paths()
+    print("> Exploring data...")
     print(df.info())
     print(df.head(2))
 
@@ -173,3 +174,7 @@ def explore_data(df):
     # plt.interactive(False)
     # plt.tight_layout()
     # fig3.savefig(paths.get("output_plots_path") + "fig3")
+
+    print("----------------")
+    return
+

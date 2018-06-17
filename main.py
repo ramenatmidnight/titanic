@@ -1,7 +1,7 @@
 from models.build_submission import build_submission
 from models.evaluate import evaluate_model
 from models.train import train_model
-from preprocess.explore_data import explore_data
+from explore.explore_data import explore_data
 from preprocess.clean_data import clean_data
 from preprocess.extract_features import extract_features
 from preprocess.load_data import load_data
@@ -20,6 +20,8 @@ def main():
 
     explore_data(df)
     # Age, Sex, Pclass seems to contribute to Survived
+
+    # TODO: cache at every step
 
     df = transform_data(df)
     df = clean_data(df)
